@@ -1,4 +1,4 @@
-module OneBasics.Note where
+module OneBasics.InClassNotes where
 
 {-
     1.2 Functional composition
