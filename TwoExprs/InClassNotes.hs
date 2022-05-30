@@ -56,3 +56,21 @@ three x = 3
 
 to :: Bool -> Bool -- never going to end
 to b = not (to b)
+
+{-
+    2.5 Printing values
+-}
+
+commonWords :: Int -> String -> String
+commonWords _ _ = ""
+
+main :: IO ()
+main = do {putStrLn "Take text from where:";
+    infile <- getLine;
+    putStrLn "How many words:";
+    n <- getLine;
+    putStrLn "Put results where:";
+    outfile <- getLine;
+    text <- readFile infile;
+    writeFile outfile (commonWords (read n) text);
+    putStrLn "cwords done!" }
