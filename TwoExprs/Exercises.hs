@@ -60,7 +60,6 @@ exp'' x n | n == 0 = 1
           where evenMul = exp'' x (n `div` 2) * exp'' x (n `div` 2)
 
 -- Exercise G
-
 type Date = (Int, Int, Int)
 
 showDate :: Date -> String
@@ -78,3 +77,25 @@ suffix 3 = "rd"
 suffix _ = "th"
 
 month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+-- Exercise H
+getDigit :: Char -> Int
+getDigit c = read [c]
+
+getSum :: String -> Int
+getSum s 
+    | length s /= 2 = error "Sum need to be two digits."
+    | otherwise = head digitList * 10 + last digitList
+    where digitList = map getDigit s
+
+type CIN = String
+
+addSum :: CIN -> CIN
+addSum cin = show $ sum $ map getDigit cin
+
+valid :: CIN -> Bool
+valid cin 
+    | length cin /= 10 = error "CIN is a 10 digits numbers."
+    | otherwise = origin == calculated
+    where origin = getSum $ drop 8 cin
+          calculated = getSum $ addSum $ take 8 cin 
