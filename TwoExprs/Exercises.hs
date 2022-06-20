@@ -1,4 +1,5 @@
 module TwoExprs.Exercises where
+import Data.Char (isAlpha, toLower)
 
 {-
     Exercise A
@@ -83,7 +84,7 @@ getDigit :: Char -> Int
 getDigit c = read [c]
 
 getSum :: String -> Int
-getSum s 
+getSum s
     | length s /= 2 = error "Sum need to be two digits."
     | otherwise = head digitList * 10 + last digitList
     where digitList = map getDigit s
@@ -94,8 +95,29 @@ addSum :: CIN -> CIN
 addSum cin = show $ sum $ map getDigit cin
 
 valid :: CIN -> Bool
-valid cin 
+valid cin
     | length cin /= 10 = error "CIN is a 10 digits numbers."
     | otherwise = origin == calculated
     where origin = getSum $ drop 8 cin
-          calculated = getSum $ addSum $ take 8 cin 
+          calculated = getSum $ addSum $ take 8 cin
+
+-- Exercise I
+isPalindrome :: String -> Bool
+isPalindrome [] = True
+isPalindrome [x] = True
+isPalindrome (x:xs)
+    | isAlpha x = if isAlpha $ last xs then (toLower x == toLower (last xs)) && isPalindrome(init xs) 
+    else isPalindrome(x:init xs)
+    | otherwise = isPalindrome xs
+
+isPalindrome' :: String -> Bool
+isPalindrome' xs = ys == reverse ys
+    where ys = map toLower $ filter isAlpha xs
+
+palindrome :: IO ()
+palindrome = do {
+    putStrLn "Enter a string:";
+    infile <- getLine;
+    if isPalindrome infile then putStrLn "Yes!"
+    else  putStrLn "No!" 
+}
