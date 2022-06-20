@@ -65,7 +65,8 @@ commonWords :: Int -> String -> String
 commonWords _ _ = ""
 
 main :: IO ()
-main = do {putStrLn "Take text from where:";
+main = do {
+    putStrLn "Take text from where:";
     infile <- getLine;
     putStrLn "How many words:";
     n <- getLine;
@@ -73,4 +74,5 @@ main = do {putStrLn "Take text from where:";
     outfile <- getLine;
     text <- readFile infile;
     writeFile outfile (commonWords (read n) text);
-    putStrLn "cwords done!" }
+    putStrLn "cwords done!" 
+}
