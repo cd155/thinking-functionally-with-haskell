@@ -1,4 +1,4 @@
-module OneBasics.InClassNotes where
+module Lectures.ChapterOne where
 
 {-
     1.2 Functional composition

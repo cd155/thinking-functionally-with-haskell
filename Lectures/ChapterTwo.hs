@@ -1,4 +1,4 @@
-module TwoExprs.InClassNotes where
+module Lectures.ChapterTwo where
 
 {-
     2.2 Names and operators

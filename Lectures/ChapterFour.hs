@@ -1,4 +1,4 @@
-module FourLists.InClassNotes where
+module Lectures.ChapterFour where
 
 {-
     4.1 List notation

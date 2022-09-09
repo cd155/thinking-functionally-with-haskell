@@ -1,4 +1,4 @@
-module TwoExprs.Exercises where
+module Exercises.ExerciseTwo where
 import Data.Char (isAlpha, toLower)
 
 {-

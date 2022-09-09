@@ -1,4 +1,4 @@
-module ThreeNums.InClassNotes where
+module Lectures.ChapterThree where
 
 {-
     3.3 Computing floors

@@ -1,4 +1,4 @@
-module OneBasics.Exercises where
+module Exercises.ExerciseOne where
 import Data.Char (toUpper)
 
 {-

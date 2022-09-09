@@ -1,4 +1,4 @@
-module ThreeNums.Exercises where
+module Exercises.ExerciseThree where
 import Distribution.Simple.Utils (xargs)
 
 {-
