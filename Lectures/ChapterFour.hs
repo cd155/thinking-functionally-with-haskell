@@ -13,9 +13,10 @@ iterate' f x = x : iterate' f (f x)
 --     where perfect n = (n == sum divisors n)
 
 triads :: Int -> [(Int,Int,Int)]
-triads n = [
-    (x,y,z) | 
-    x <- [1..n], y <- [1..n], z <- [1..n], 
-    x*x+y*y==z*z]
+triads n = [ (x,y,z) | x <- [1..n], 
+                       y <- [1..n], 
+                       z <- [1..n], 
+                       x*x + y*y == z*z ]
 
-divisors x = [d | d <- [2..x-1], x `mod` d == 0]
+divisors x = [ d | d <- [2..x-1], 
+                   x `mod` d == 0 ]
