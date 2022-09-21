@@ -1,5 +1,4 @@
 module Exercises.ExerciseThree where
-import Distribution.Simple.Utils (xargs)
 
 {-
     Exercise A
