@@ -36,6 +36,18 @@ double n = 2 * n
     - Haskell uses lazy evaluation. 
     - ML (another popular functional language) uses eager evaluation.
 
+      sqr (3+4) eager evaluation
+    = sqr 7
+    = let x = 7 ub x*x
+    = 7*7
+    = 49
+
+      sqr (3+4) lazy evaluation
+    = let x = 3+4 in x*x
+    = let x = 7 ub x*x
+    = 7*7
+    = 49
+
     A Haskell function f is said to be strict if f undefined = undefined. 
     Otherwise, the function is said to be non-strict. Lazy evaluation lets 
     Haskell define non-strict functions, such as the three function:
